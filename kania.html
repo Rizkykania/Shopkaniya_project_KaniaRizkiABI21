@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Toko Tas | Shopkaniya</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <style>
+    .cart-icon {
+      position: relative;
+      font-size: 1.1rem;
+      margin-left: 20px;
+    }
+    .cart-count {
+      position: relative;
+      top: -5px;
+      right: -5px;
+      background-color: red;
+      color: white;
+      padding: 3px 7px;
+      border-radius: 40%;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <!-- LOGO -->
+      <div class="logo-area">
+        <img src="Logo Shopkaniya.png" alt="" class="logo-img" />
+        <h1 class="logo-text">Shopkaniya</h1>
+      </div>
+
+      <!-- NAVIGASI -->
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#beranda">Beranda</a></li>
+          <li><a href="#produk">Produk</a></li>
+          <li><a href="#tentang">Tentang</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+      </nav>
+
+      <!-- IKON KERANJANG -->
+      <div class="cart-icon">
+        <a href="#pembayaran">
+          <i class="fas fa-shopping-cart"></i> Keranjang
+          <span class="cart-count" id="cart-count">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Shoulder Bag dan Selempang</h2>
+      <p>Shoulder Bag & Selempang Pilihan cerdas untuk gaya anda. Temukan koleksi spesial hanya di Shopkaniya.</p>
+      <a href="#produk" class="btn">Belanja Sekarang</a>
+    </div>
+  </section>
+
+  <!-- PRODUK -->
+  <section class="produk" id="produk">
+    <h2>Koleksi Unggulan</h2>
+    <div class="produk-grid">
+      <div class="card">
+        <img src="Clo Bag.jpg" alt="Shoulder Bag" />
+        <h3>Clo Bag</h3>
+        <p>Shoulder Bag ukuran besar dan desain simpel tapi nggak membosankan.</p>
+        <span class="harga">Rp75.000</span>
+        <button class="btn-beli" onclick="addToCart()">
+          <i class="fas fa-shopping-cart"></i> Tambahkan ke Keranjang
+        </button>
+        <button class="btn-beli">
+          <i class="fas fa-credit-card"></i> Beli Sekarang
+        </button>
+      </div>
+      <div class="card">
+        <img src="Lora Bag.jpg" alt="Tas Selempang" />
+        <h3>Lora Bag</h3>
+        <p>Tas Selempang dengan Aksen serut serta tali yang adjustable menambah daya tarik Lora.</p>
+        <span class="harga">Rp65.000</span>
+        <button class="btn-beli" onclick="addToCart()">
+          <i class="fas fa-shopping-cart"></i> Tambahkan ke Keranjang
+        </button>
+        <button class="btn-beli">
+          <i class="fas fa-credit-card"></i> Beli Sekarang
+        </button>
+      </div>
+      <div class="card">
+        <img src="Kleo Bag.jpg" alt="Shoulder Bag" />
+        <h3>Kleo Bag</h3>
+        <p>Kleo Bag dengan bahan synthetic leather.</p>
+        <span class="harga">Rp60.000</span>
+        <button class="btn-beli" onclick="addToCart()">
+          <i class="fas fa-shopping-cart"></i> Tambahkan ke Keranjang
+        </button>
+        <button class="btn-beli">
+          <i class="fas fa-credit-card"></i> Beli Sekarang
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- HALAMAN PEMBAYARAN -->
+  <section id="pembayaran" class="pembayaran" style="padding: 60px 20px; text-align: center;">
+    <h2>Halaman Pembayaran</h2>
+    <form action="#" method="POST" style="max-width: 600px; margin: auto; font-size: 1.1rem; text-align: left;">
+      <div class="form-group">
+        <label for="nama">Nama Lengkap:</label>
+        <input type="text" id="nama" name="nama" required placeholder="Masukkan Nama Lengkap" />
+      </div>
+      <div class="form-group">
+        <label for="alamat">Alamat Pengiriman:</label>
+        <textarea id="alamat" name="alamat" required placeholder="Masukkan Alamat Pengiriman"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required placeholder="Masukkan Email" />
+      </div>
+      <div class="form-group">
+        <label for="nomor">Nomor Telepon:</label>
+        <input type="text" id="nomor" name="nomor" required placeholder="Masukkan Nomor Telepon" />
+      </div>
+      <div class="form-group">
+        <label for="metodePembayaran">Metode Pembayaran:</label>
+        <select id="metodePembayaran" name="metodePembayaran" required>
+          <option value="transfer">Transfer Bank</option>
+          <option value="cod">Cash on Delivery (COD)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="totalHarga">Total Harga:</label>
+        <input type="text" id="totalHarga" name="totalHarga" readonly value="Rp75.000" />
+      </div>
+      <button type="submit" class="btn-beli">Konfirmasi Pembayaran</button>
+    </form>
+  </section>
+
+  <!-- TENTANG -->
+  <section id="tentang" class="tentang" style="padding: 60px 20px; text-align: center;">
+    <h2>Tentang Kami</h2>
+    <p style="max-width: 600px; margin: auto; font-size: 1.1rem;">
+      Shopkaniya adalah e-commerce yang menghadirkan berbagai pilihan tas dengan desain stylish, fungsional dan berkualitas tinggi. Kami percaya bahwa tas bukan hanya sekedar pelengkap, tapi juga bagian dari gaya hidup dan ekspresi diri.
+    </p>
+  </section>
+
+  <!-- KONTAK -->
+  <section id="kontak" class="kontak" style="padding: 60px 20px; text-align: center;">
+    <h2>Kontak Kami</h2>
+    <p>Email: <a href="mailto:kaniarizki17@gmail.com">kaniarizki17@gmail.com</a></p>
+    <p>WhatsApp: <a href="https://wa.me/6285221247406" target="_blank">0852-2124-7406</a></p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="contact-info">
+      <p>Email: kaniarizki17@gmail.com</p>
+      <p>WhatsApp: 0852-2124-7406</p>
+      <p>&copy; 2025 Shopkaniya. Semua hak cipta dilindungi.</p>
+    </div>
+  </footer>
+
+  <script>
+    let cartCount = 0; // Initial count of items in the cart
+
+    // Function to update the cart count
+    function addToCart() {
+      cartCount++; // Increase cart count
+      document.getElementById("cart-count").textContent = cartCount; // Update the cart count display
+    }
+  </script>
+
+</body>
+</html>
